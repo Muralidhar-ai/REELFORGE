@@ -4,8 +4,6 @@ ReelForge is a production desk marketplace where commercial brands find and hire
 It enables brands to inspect step-by-step workflow replays, verify tool subscription licences for commercial safety, and score creator matches against structured campaign briefs.
 Built for high-velocity commercial production with zero-setup offline fallback capabilities.
 
-**Live URL**: `https://reelforge.vercel.app` *(Placeholder for deployment)*
-
 ---
 
 ## ⚡ 60-Second Demo Path
