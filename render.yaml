@@ -1,0 +1,14 @@
+# Render.com Blueprint Spec for ReelForge
+services:
+  - type: web
+    name: reelforge
+    runtime: node
+    plan: free
+    region: singapore # or oregon, frankfurt, etc.
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      - key: USE_LOCAL_DATA
+        value: "true"
