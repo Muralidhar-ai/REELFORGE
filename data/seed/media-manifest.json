@@ -1,0 +1,14 @@
+[
+  { "item_id": "port_1", "file": "/seed/sneaker_916.mp4", "media_type": "video", "aspect_ratio": "9:16", "alt": "Fluid motion render of Gen-Z neon sneaker launch" },
+  { "item_id": "port_2", "file": "/seed/sneaker_thumb2.jpg", "media_type": "image", "aspect_ratio": "1:1", "alt": "High-top sneaker raytraced studio lighting close-up" },
+  { "item_id": "port_3", "file": "/seed/sneaker_thumb3.jpg", "media_type": "image", "aspect_ratio": "16:9", "alt": "Cinematic slate featuring futuristic sneaker sole technology" },
+  { "item_id": "port_4", "file": "/seed/fintech_169.jpg", "media_type": "image", "aspect_ratio": "16:9", "alt": "Clean UI motion diagram for digital vault app" },
+  { "item_id": "port_5", "file": "/seed/fintech_thumb2.jpg", "media_type": "image", "aspect_ratio": "9:16", "alt": "Mobile banking security hologram sequence" },
+  { "item_id": "port_6", "file": "/seed/fintech_thumb3.jpg", "media_type": "image", "aspect_ratio": "1:1", "alt": "Isometric crypto wallet asset visualization" },
+  { "item_id": "port_7", "file": "/seed/jewellery_11.jpg", "media_type": "image", "aspect_ratio": "1:1", "alt": "Intricate temple gold necklace in warm candle lighting" },
+  { "item_id": "port_8", "file": "/seed/fashion_45.jpg", "media_type": "image", "aspect_ratio": "4:5", "alt": "Editorial silk drape portrait with subtle particle physics" },
+  { "item_id": "port_9", "file": "/seed/fashion_thumb3.jpg", "media_type": "image", "aspect_ratio": "9:16", "alt": "Runway slow motion model walk in virtual courtyard" },
+  { "item_id": "port_10", "file": "/seed/gaming_169.jpg", "media_type": "image", "aspect_ratio": "16:9", "alt": "Epic dark fantasy boss encounter battle keyframe" },
+  { "item_id": "port_11", "file": "/seed/music_thumb2.jpg", "media_type": "image", "aspect_ratio": "9:16", "alt": "Reactive audio spectrum wave in neon pink and cyan" },
+  { "item_id": "port_12", "file": "/seed/music_thumb3.jpg", "media_type": "image", "aspect_ratio": "1:1", "alt": "Retro synthwave album artwork animation frame" }
+]

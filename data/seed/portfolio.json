@@ -1,0 +1,292 @@
+[
+  {
+    "id": "port_1",
+    "creator_id": "cr_1",
+    "title": "AURA Kicks - Neon Kinetic Fluid Launch",
+    "description": "Commercial 9:16 vertical teaser showing liquid latex morphing into high-top sneakers with dynamic camera speed ramps.",
+    "media_type": "video",
+    "media_url": "/seed/sneaker_916.mp4",
+    "thumbnail_url": "/seed/sneaker_916.mp4",
+    "alt_text": "Fluid motion render of Gen-Z neon sneaker launch",
+    "aspect_ratio": "9:16",
+    "content_type": "video",
+    "style_tags": ["photoreal", "cinematic", "neon"],
+    "tools_used": [
+      { "tool": "ComfyUI", "plan": "Unlimited" },
+      { "tool": "Runway", "plan": "Pro" },
+      { "tool": "DaVinci Resolve", "plan": "Pro" }
+    ],
+    "generation_count": 87,
+    "proof_url": "https://github.com/dev-ananth/comfyui-aura-sneaker-workflow",
+    "brand_work": true,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Base Product Concept", "tool": "Midjourney", "detail": "Generated 40 photorealistic shoe silhouette variations with neon studio rim lights." },
+      { "title": "Custom AnimateDiff ControlNet", "tool": "ComfyUI", "detail": "Trained custom depth maps for fluid splash geometry around the heel unit." },
+      { "title": "Gen-3 Alpha Interpolation", "tool": "Runway", "detail": "Extended fluid expansion keyframes with high camera motion control settings." },
+      { "title": "Color Pass & Speed Ramping", "tool": "DaVinci Resolve", "detail": "Converted ACES color space to Rec.709 with neon saturation boost." }
+    ]
+  },
+  {
+    "id": "port_2",
+    "creator_id": "cr_1",
+    "title": "AURA Kicks - Sole Technology Close-Up",
+    "description": "Macro Studio render highlighting cushioning air pod physics and carbon fiber weave texture.",
+    "media_type": "image",
+    "media_url": "/seed/sneaker_thumb2.jpg",
+    "thumbnail_url": "/seed/sneaker_thumb2.jpg",
+    "alt_text": "High-top sneaker raytraced studio lighting close-up",
+    "aspect_ratio": "1:1",
+    "content_type": "image",
+    "style_tags": ["photoreal", "luxury", "minimal"],
+    "tools_used": [
+      { "tool": "Midjourney", "plan": "Pro" },
+      { "tool": "ComfyUI", "plan": "Unlimited" }
+    ],
+    "generation_count": 43,
+    "proof_url": "https://github.com/dev-ananth/comfyui-aura-sneaker-workflow",
+    "brand_work": true,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Textural Prompting", "tool": "Midjourney", "detail": "Prompted macro weave detail at 8k resolution with v6 raw parameters." },
+      { "title": "Supersampling & Upscale", "tool": "ComfyUI", "detail": "Passed through Ultimate SD Upscaler node with 0.18 denoise factor." }
+    ]
+  },
+  {
+    "id": "port_3",
+    "creator_id": "cr_1",
+    "title": "AURA Kicks - Cityscape Hero Slate",
+    "description": "Widescreen campaign keyframe placing the sneaker on a floating glass pedestal above futuristic Tokyo skyline.",
+    "media_type": "image",
+    "media_url": "/seed/sneaker_thumb3.jpg",
+    "thumbnail_url": "/seed/sneaker_thumb3.jpg",
+    "alt_text": "Cinematic slate featuring futuristic sneaker sole technology",
+    "aspect_ratio": "16:9",
+    "content_type": "image",
+    "style_tags": ["cinematic", "neon", "photoreal"],
+    "tools_used": [
+      { "tool": "Midjourney", "plan": "Pro" },
+      { "tool": "Runway", "plan": "Pro" }
+    ],
+    "generation_count": 61,
+    "proof_url": "https://github.com/dev-ananth/comfyui-aura-sneaker-workflow",
+    "brand_work": true,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Background Matte Generation", "tool": "Midjourney", "detail": "Created hyper-detailed neon rain reflection city background." },
+      { "title": "Inpainting Integration", "tool": "Runway", "detail": "Blended 3D footwear element onto glass pedestal with realistic refractions." }
+    ]
+  },
+  {
+    "id": "port_4",
+    "creator_id": "cr_2",
+    "title": "NovaVault - Digital Security Explainer",
+    "description": "16:9 animated explainer demonstrating biometrically encrypted crypto vaults for Web3 users.",
+    "media_type": "image",
+    "media_url": "/seed/fintech_169.jpg",
+    "thumbnail_url": "/seed/fintech_169.jpg",
+    "alt_text": "Clean UI motion diagram for digital vault app",
+    "aspect_ratio": "16:9",
+    "content_type": "animation",
+    "style_tags": ["3d render", "minimal", "playful"],
+    "tools_used": [
+      { "tool": "Kling", "plan": "Standard" },
+      { "tool": "After Effects", "plan": "Pro" },
+      { "tool": "ElevenLabs", "plan": "Pro" }
+    ],
+    "generation_count": 114,
+    "proof_url": "https://vimeo.com/mayalin/novavault-proof-breakdown",
+    "brand_work": true,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Vector Character Rigging", "tool": "Stable Diffusion", "detail": "Generated multi-angle character turnarounds using IP-Adapter." },
+      { "title": "Motion Generation", "tool": "Kling", "detail": "Generated 6-second motion passes for vault door opening mechanism." },
+      { "title": "UI Compositing & Voiceover", "tool": "After Effects", "detail": "Overlaid animated chart graphics and synced ElevenLabs AI narrator track." }
+    ]
+  },
+  {
+    "id": "port_5",
+    "creator_id": "cr_2",
+    "title": "NovaVault - Mobile Biometric Shield",
+    "description": "Vertical smartphone preview with holographic security pulse animation.",
+    "media_type": "image",
+    "media_url": "/seed/fintech_thumb2.jpg",
+    "thumbnail_url": "/seed/fintech_thumb2.jpg",
+    "alt_text": "Mobile banking security hologram sequence",
+    "aspect_ratio": "9:16",
+    "content_type": "animation",
+    "style_tags": ["3d render", "neon", "minimal"],
+    "tools_used": [
+      { "tool": "Kling", "plan": "Standard" },
+      { "tool": "After Effects", "plan": "Pro" }
+    ],
+    "generation_count": 29,
+    "proof_url": "https://vimeo.com/mayalin/novavault-proof-breakdown",
+    "brand_work": true,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Hologram Shader Pass", "tool": "Kling", "detail": "Animated volumetric glowing wireframe ring sequence." },
+      { "title": "Mobile Screen Integration", "tool": "After Effects", "detail": "Corner pin tracked hologram onto glass phone mockup." }
+    ]
+  },
+  {
+    "id": "port_6",
+    "creator_id": "cr_2",
+    "title": "NovaVault - Asset Security Icons",
+    "description": "3D isometric icon pack created for landing page illustration.",
+    "media_type": "image",
+    "media_url": "/seed/fintech_thumb3.jpg",
+    "thumbnail_url": "/seed/fintech_thumb3.jpg",
+    "alt_text": "Isometric crypto wallet asset visualization",
+    "aspect_ratio": "1:1",
+    "content_type": "3d",
+    "style_tags": ["3d render", "minimal", "playful"],
+    "tools_used": [
+      { "tool": "Stable Diffusion", "plan": "Pro" }
+    ],
+    "generation_count": 37,
+    "brand_work": false,
+    "year": 2025,
+    "workflow_steps": [
+      { "title": "Isometric Grid Generation", "tool": "Stable Diffusion", "detail": "Trained LoRA model on clean pastel isometric clay renders." }
+    ]
+  },
+  {
+    "id": "port_7",
+    "creator_id": "cr_3",
+    "title": "Zaveri Heritage - Temple Gold Festive Campaign",
+    "description": "Square social visual featuring 22-carat handcrafted bridal gold jewelry with warm candlelight bokeh.",
+    "media_type": "image",
+    "media_url": "/seed/jewellery_11.jpg",
+    "thumbnail_url": "/seed/jewellery_11.jpg",
+    "alt_text": "Intricate temple gold necklace in warm candle lighting",
+    "aspect_ratio": "1:1",
+    "content_type": "image",
+    "style_tags": ["luxury", "photoreal", "pastel"],
+    "tools_used": [
+      { "tool": "Midjourney", "plan": "Pro" },
+      { "tool": "Luma", "plan": "Standard" }
+    ],
+    "generation_count": 92,
+    "proof_url": "https://behance.net/kavyasharma/zaveri-gold-ai-process",
+    "brand_work": true,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Gemstone Raytrace Prompting", "tool": "Midjourney", "detail": "Prompted caustics, gold filigree refraction and silk velvet backdrop." },
+      { "title": "Camera Dolly Motion", "tool": "Luma", "detail": "Generated 4-second orbital macro move around central pendant." }
+    ]
+  },
+  {
+    "id": "port_8",
+    "creator_id": "cr_3",
+    "title": "Couture Silks - Editorial Motion Lookbook",
+    "description": "4:5 portrait mode fashion editorial showing fluid silk drapes moving softly in ambient sunlight.",
+    "media_type": "image",
+    "media_url": "/seed/fashion_45.jpg",
+    "thumbnail_url": "/seed/fashion_45.jpg",
+    "alt_text": "Editorial silk drape portrait with subtle particle physics",
+    "aspect_ratio": "4:5",
+    "content_type": "image",
+    "style_tags": ["luxury", "photoreal", "minimal"],
+    "tools_used": [
+      { "tool": "Midjourney", "plan": "Pro" },
+      { "tool": "CapCut", "plan": "Pro" }
+    ],
+    "generation_count": 54,
+    "brand_work": true,
+    "year": 2025,
+    "workflow_steps": [
+      { "title": "Model Lighting Setup", "tool": "Midjourney", "detail": "Generated editorial lighting keyframes with subtle golden hour tones." }
+    ]
+  },
+  {
+    "id": "port_9",
+    "creator_id": "cr_3",
+    "title": "Virtual Runway - Paris Fashion Week Concept",
+    "description": "Vertical runway sequence rendered inside a floating glass pavilion.",
+    "media_type": "image",
+    "media_url": "/seed/fashion_thumb3.jpg",
+    "thumbnail_url": "/seed/fashion_thumb3.jpg",
+    "alt_text": "Runway slow motion model walk in virtual courtyard",
+    "aspect_ratio": "9:16",
+    "content_type": "video",
+    "style_tags": ["luxury", "cinematic", "photoreal"],
+    "tools_used": [
+      { "tool": "Runway", "plan": "Standard" }
+    ],
+    "generation_count": 78,
+    "brand_work": false,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Catwalk Motion Prompting", "tool": "Runway", "detail": "Controlled stride frequency and fabric sway using camera speed sliders." }
+    ]
+  },
+  {
+    "id": "port_10",
+    "creator_id": "cr_4",
+    "title": "Synth Realm - Audio Reactive Dungeon",
+    "description": "Audio-driven motion visualizer for electronic producer release.",
+    "media_type": "image",
+    "media_url": "/seed/gaming_169.jpg",
+    "thumbnail_url": "/seed/gaming_169.jpg",
+    "alt_text": "Epic dark fantasy boss encounter battle keyframe",
+    "aspect_ratio": "16:9",
+    "content_type": "audio_music",
+    "style_tags": ["surreal", "neon", "retro"],
+    "tools_used": [
+      { "tool": "ComfyUI", "plan": "Unlimited" },
+      { "tool": "Pika", "plan": "Free" }
+    ],
+    "generation_count": 131,
+    "brand_work": false,
+    "year": 2026,
+    "workflow_steps": [
+      { "title": "Stem Separation & FFT Node", "tool": "ComfyUI", "detail": "Extracted drum transients to drive latent noise injection every quarter beat." },
+      { "title": "Glitch FX Pass", "tool": "Pika", "detail": "Synthesized reactive VHS distortion waves across high frequency drops." }
+    ]
+  },
+  {
+    "id": "port_11",
+    "creator_id": "cr_4",
+    "title": "Neon Spectrum - Vertical Visualizer",
+    "description": "9:16 vertical concert screen loop with reactive neon particle physics.",
+    "media_type": "image",
+    "media_url": "/seed/music_thumb2.jpg",
+    "thumbnail_url": "/seed/music_thumb2.jpg",
+    "alt_text": "Reactive audio spectrum wave in neon pink and cyan",
+    "aspect_ratio": "9:16",
+    "content_type": "motion_graphics",
+    "style_tags": ["neon", "surreal"],
+    "tools_used": [
+      { "tool": "Pika", "plan": "Free" }
+    ],
+    "generation_count": 48,
+    "brand_work": false,
+    "year": 2025,
+    "workflow_steps": [
+      { "title": "Particle Emission", "tool": "Pika", "detail": "Generated continuous particle flow loop at 60 FPS." }
+    ]
+  },
+  {
+    "id": "port_12",
+    "creator_id": "cr_4",
+    "title": "Retro Wave Album Cover",
+    "description": "1:1 animated synthwave cassette sleeve cover art.",
+    "media_type": "image",
+    "media_url": "/seed/music_thumb3.jpg",
+    "thumbnail_url": "/seed/music_thumb3.jpg",
+    "alt_text": "Retro synthwave album artwork animation frame",
+    "aspect_ratio": "1:1",
+    "content_type": "image",
+    "style_tags": ["retro", "neon"],
+    "tools_used": [
+      { "tool": "ComfyUI", "plan": "Unlimited" }
+    ],
+    "generation_count": 33,
+    "brand_work": false,
+    "year": 2025,
+    "workflow_steps": [
+      { "title": "Vector Synth Grid", "tool": "ComfyUI", "detail": "Generated wireframe sunset horizon grid." }
+    ]
+  }
+]

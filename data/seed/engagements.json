@@ -1,0 +1,19 @@
+[
+  {
+    "id": "eng_1",
+    "brief_id": "brief_1",
+    "creator_id": "cr_1",
+    "status": "in_progress",
+    "revision_rounds_used": 1,
+    "versions": [
+      {
+        "n": 1,
+        "note": "v1 initial draft featuring liquid motion pass and sole close-up sequence.",
+        "media_url": "/seed/sneaker_916.mp4",
+        "brand_feedback": "Looks fantastic! Please increase fluid speed around second 4 and enhance rim lighting.",
+        "state": "changes_requested"
+      }
+    ],
+    "updated_at": "2026-10-05T16:00:00Z"
+  }
+]

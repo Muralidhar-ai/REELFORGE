@@ -1,0 +1,98 @@
+[
+  {
+    "tool": "Runway",
+    "plan": "Pro",
+    "commercial_use": "allowed",
+    "notes": "Full commercial ownership for paid advertisements and broadcast usage under Pro tier.",
+    "source_url": "https://runwayml.com/terms",
+    "last_checked": "2026-09-15"
+  },
+  {
+    "tool": "Runway",
+    "plan": "Standard",
+    "commercial_use": "restricted",
+    "notes": "Allowed for organic social and web; restricted for broadcast TV and high-spend paid ad campaigns.",
+    "source_url": "https://runwayml.com/terms",
+    "last_checked": "2026-09-15"
+  },
+  {
+    "tool": "Kling",
+    "plan": "Pro",
+    "commercial_use": "allowed",
+    "notes": "Unlimited commercial usage rights for video output under Pro monthly plan.",
+    "source_url": "https://klingai.com/pricing",
+    "last_checked": "2026-09-10"
+  },
+  {
+    "tool": "Kling",
+    "plan": "Standard",
+    "commercial_use": "restricted",
+    "notes": "Commercial usage allowed for organic channels; paid ads require add-on enterprise clearance.",
+    "source_url": "https://klingai.com/pricing",
+    "last_checked": "2026-09-10"
+  },
+  {
+    "tool": "Kling",
+    "plan": "Free",
+    "commercial_use": "not_allowed",
+    "notes": "Strictly non-commercial watermarked outputs under free tier.",
+    "source_url": "https://klingai.com/pricing",
+    "last_checked": "2026-09-10"
+  },
+  {
+    "tool": "Midjourney",
+    "plan": "Pro",
+    "commercial_use": "allowed",
+    "notes": "Commercial usage rights included for subscribers earning > $20k/yr under Pro or Mega plan.",
+    "source_url": "https://docs.midjourney.com/terms",
+    "last_checked": "2026-09-01"
+  },
+  {
+    "tool": "Midjourney",
+    "plan": "Free",
+    "commercial_use": "not_allowed",
+    "notes": "Outputs generated under non-paid accounts are licensed under Creative Commons BY-NC 4.0.",
+    "source_url": "https://docs.midjourney.com/terms",
+    "last_checked": "2026-09-01"
+  },
+  {
+    "tool": "Luma",
+    "plan": "Standard",
+    "commercial_use": "allowed",
+    "notes": "Dream Machine outputs under paid tier include full commercial monetization rights.",
+    "source_url": "https://lumalabs.ai/terms",
+    "last_checked": "2026-08-20"
+  },
+  {
+    "tool": "Pika",
+    "plan": "Free",
+    "commercial_use": "not_allowed",
+    "notes": "Free tier videos retain watermark and cannot be used in commercial ad assets.",
+    "source_url": "https://pika.art/terms",
+    "last_checked": "2026-08-15"
+  },
+  {
+    "tool": "Stable Diffusion",
+    "plan": "Pro",
+    "commercial_use": "allowed",
+    "notes": "Open-weights SDXL model under Stability AI Community License allows commercial use under revenue threshold.",
+    "source_url": "https://stability.ai/license",
+    "last_checked": "2026-08-10"
+  },
+  {
+    "tool": "ElevenLabs",
+    "plan": "Pro",
+    "commercial_use": "allowed",
+    "notes": "Commercial voice generation rights with explicit actor consent verifications.",
+    "source_url": "https://elevenlabs.io/terms",
+    "last_checked": "2026-09-18"
+  },
+  {
+    "tool": "ComfyUI",
+    "plan": "Unlimited",
+    "commercial_use": "allowed",
+    "notes": "Open source workflow engine; rights depend on specific node models used.",
+    "source_url": "https://github.com/comfyanonymous/ComfyUI",
+    "last_checked": "2026-09-22"
+  }
+]
