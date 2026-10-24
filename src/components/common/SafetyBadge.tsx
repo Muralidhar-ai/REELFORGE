@@ -12,10 +12,10 @@ export function SafetyBadge({ status, cause }: SafetyBadgeProps) {
     return (
       <span
         data-testid="safety-badge"
-        className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-amber-500/10 text-amber-300 border border-amber-500/20"
+        className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-[#C68A36]/10 text-[#E5A853] border border-[#C68A36]/25"
         title={cause}
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+        <span className="w-1.5 h-1.5 rounded-full bg-[#C68A36]" />
         <span className="truncate max-w-[180px]">{cause || "Audit Required"}</span>
       </span>
     );
@@ -25,10 +25,10 @@ export function SafetyBadge({ status, cause }: SafetyBadgeProps) {
     return (
       <span
         data-testid="safety-badge"
-        className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-rose-500/10 text-rose-300 border border-rose-500/20"
+        className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-[#B84A4A]/10 text-[#E57373] border border-[#B84A4A]/25"
         title={cause}
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+        <span className="w-1.5 h-1.5 rounded-full bg-[#B84A4A]" />
         <span className="truncate max-w-[180px]">{cause || "Licence Restricted"}</span>
       </span>
     );
@@ -37,10 +37,10 @@ export function SafetyBadge({ status, cause }: SafetyBadgeProps) {
   return (
     <span
       data-testid="safety-badge"
-      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
+      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-[#3E895B]/10 text-[#6BCB8B] border border-[#3E895B]/25"
       title={cause}
     >
-      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+      <span className="w-1.5 h-1.5 rounded-full bg-[#3E895B]" />
       <span className="truncate max-w-[180px]">Paid Media Cleared</span>
     </span>
   );

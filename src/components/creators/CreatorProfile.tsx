@@ -80,11 +80,11 @@ export function CreatorProfile({
   return (
     <div className="space-y-8 py-4">
       {/* Profile Header Card */}
-      <div className="border border-slate-800/80 bg-slate-900/60 rounded-xl p-6 sm:p-8 space-y-6">
+      <div className="border border-[#282A24] bg-[#191A17] rounded-xl p-6 sm:p-7 space-y-6">
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
           {/* Avatar & Director Details */}
-          <div className="flex items-start gap-5">
-            <div className="w-16 h-16 rounded-lg border border-slate-700 overflow-hidden bg-slate-800 flex-shrink-0">
+          <div className="flex items-start gap-4">
+            <div className="w-16 h-16 rounded-lg border border-[#282A24] overflow-hidden bg-[#20211D] flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={creator.avatar_url}
@@ -96,12 +96,12 @@ export function CreatorProfile({
               />
             </div>
             <div className="space-y-1">
-              <h1 className="text-3xl font-bold tracking-tight text-white font-display leading-tight">{creator.name}</h1>
-              <p className="text-slate-300 text-base font-medium">{creator.headline}</p>
-              <div className="flex items-center gap-3 text-xs text-slate-400 font-mono pt-1">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#F3F0E8] font-display leading-tight">{creator.name}</h1>
+              <p className="text-[#AAA99F] text-sm font-medium">{creator.headline}</p>
+              <div className="flex items-center gap-3 text-xs text-[#76756D] font-mono pt-0.5">
                 <span>Location: {creator.location}</span>
                 <span>•</span>
-                <span className={creator.availability === "available" ? "text-emerald-400 font-medium" : "text-amber-400 font-medium"}>
+                <span className={creator.availability === "available" ? "text-[#6BCB8B] font-medium" : "text-[#E5A853] font-medium"}>
                   {creator.availability === "available" ? "Available for Commission" : "Currently Booked"}
                 </span>
               </div>
@@ -118,7 +118,7 @@ export function CreatorProfile({
             {role === "brand" && (
               <button
                 onClick={() => setInviteModalOpen(true)}
-                className="px-4 py-2 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs transition-colors flex items-center gap-2 shadow-sm"
+                className="btn-primary text-xs"
               >
                 <Send className="w-3.5 h-3.5" />
                 Invite to Campaign Brief
@@ -128,15 +128,15 @@ export function CreatorProfile({
         </div>
 
         {/* Bio Paragraph */}
-        <p className="text-slate-300 text-sm leading-relaxed border-t border-slate-800/80 pt-4 max-w-3xl">{creator.bio}</p>
+        <p className="text-[#AAA99F] text-xs sm:text-sm leading-relaxed border-t border-[#282A24] pt-4 max-w-3xl">{creator.bio}</p>
 
         {/* Specializations & Tools Stack */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 border-t border-slate-800/80 text-xs">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 border-t border-[#282A24] text-xs">
           <div>
-            <span className="font-mono text-slate-400 text-[10px] uppercase tracking-wider block mb-1.5 font-medium">Specialization</span>
+            <span className="font-mono text-[#AAA99F] text-[10px] uppercase tracking-wider block mb-1.5 font-medium">Specialization</span>
             <div className="flex flex-wrap gap-1.5">
               {creator.specialization.map((spec) => (
-                <span key={spec} className="bg-slate-800 text-slate-200 border border-slate-700/60 px-2 py-0.5 rounded text-[11px]">
+                <span key={spec} className="bg-[#20211D] text-[#F3F0E8] border border-[#282A24] px-2 py-0.5 rounded text-[11px]">
                   {spec}
                 </span>
               ))}
@@ -144,10 +144,10 @@ export function CreatorProfile({
           </div>
 
           <div>
-            <span className="font-mono text-slate-400 text-[10px] uppercase tracking-wider block mb-1.5 font-medium">Generative Pipeline</span>
+            <span className="font-mono text-[#AAA99F] text-[10px] uppercase tracking-wider block mb-1.5 font-medium">Generative Pipeline</span>
             <div className="flex flex-wrap gap-1.5">
               {creator.tools.map((t) => (
-                <span key={t} className="bg-indigo-950/40 text-indigo-300 border border-indigo-800/40 font-mono px-2 py-0.5 rounded text-[10px]">
+                <span key={t} className="bg-[#111210] text-[#D5AD52] border border-[#282A24] font-mono px-2 py-0.5 rounded text-[10px]">
                   {t}
                 </span>
               ))}
@@ -155,10 +155,10 @@ export function CreatorProfile({
           </div>
 
           <div>
-            <span className="font-mono text-slate-400 text-[10px] uppercase tracking-wider block mb-1.5 font-medium">Core Skills</span>
+            <span className="font-mono text-[#AAA99F] text-[10px] uppercase tracking-wider block mb-1.5 font-medium">Core Skills</span>
             <div className="flex flex-wrap gap-1.5">
               {creator.skills.map((s) => (
-                <span key={s} className="bg-slate-800/60 text-slate-400 border border-slate-700/50 px-2 py-0.5 rounded text-[11px]">
+                <span key={s} className="bg-[#20211D] text-[#AAA99F] border border-[#282A24] px-2 py-0.5 rounded text-[11px]">
                   {s}
                 </span>
               ))}
@@ -167,32 +167,32 @@ export function CreatorProfile({
         </div>
 
         {/* Policy Explainer */}
-        <div className="bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-slate-400 font-mono">
-          <span className="font-semibold text-slate-200 mr-2">Provenance Standard:</span>
-          Platform reviewed directors have passed manual prompt inspection. Tool licence status guarantees legal clearance for commercial distribution.
+        <div className="bg-[#111210] border border-[#282A24] rounded-lg p-3 text-xs text-[#AAA99F] font-mono">
+          <span className="font-semibold text-[#F3F0E8] mr-2">Provenance Standard:</span>
+          Platform reviewed directors have passed manual prompt seed inspection. Tool licence status guarantees legal clearance for commercial distribution.
         </div>
       </div>
 
       {/* Portfolio Grid Section */}
-      <div className="space-y-6">
-        <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-          <h2 className="text-2xl font-bold tracking-tight text-white font-display">Work Samples ({portfolio.length})</h2>
-          <span className="font-mono text-xs text-slate-500">Select any frame to inspect prompt replay log</span>
+      <div className="space-y-4">
+        <div className="flex items-center justify-between border-b border-[#282A24] pb-3">
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#F3F0E8] font-display">Work Samples ({portfolio.length})</h2>
+          <span className="font-mono text-xs text-[#76756D]">Select any frame to inspect prompt replay log</span>
         </div>
 
         {portfolio.length === 0 ? (
-          <div className="border border-slate-800 bg-slate-900/60 rounded-xl p-8 text-center text-slate-400 text-sm">
+          <div className="border border-[#282A24] bg-[#191A17] rounded-xl p-8 text-center text-[#AAA99F] text-sm">
             No work samples uploaded yet for this creator.
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {portfolio.map((item) => {
               const itemSafety = evaluateItemSafety(item, licenses);
               return (
                 <div
                   key={item.id}
                   onClick={() => setSelectedItem(item)}
-                  className="border border-slate-800/80 bg-slate-900/60 rounded-xl p-4 space-y-3 cursor-pointer hover:border-slate-700 hover:bg-slate-900/90 transition-all flex flex-col justify-between"
+                  className="border border-[#282A24] bg-[#191A17] rounded-xl p-4 space-y-3 cursor-pointer hover:border-[#3D4036] hover:bg-[#20211D] transition-all flex flex-col justify-between group"
                 >
                   <div className="space-y-2">
                     <PortfolioFrame
@@ -203,22 +203,22 @@ export function CreatorProfile({
                     />
 
                     <div className="flex items-start justify-between gap-2 pt-1">
-                      <h3 className="font-semibold text-white text-sm line-clamp-1">{item.title}</h3>
-                      <span className="font-mono text-[10px] text-slate-400 border border-slate-800 px-1.5 py-0.5 rounded flex-shrink-0 bg-slate-950">
+                      <h3 className="font-semibold text-[#F3F0E8] text-sm line-clamp-1 group-hover:text-[#D5AD52] transition-colors">{item.title}</h3>
+                      <span className="font-mono text-[10px] text-[#AAA99F] border border-[#282A24] px-1.5 py-0.5 rounded flex-shrink-0 bg-[#111210]">
                         {item.aspect_ratio}
                       </span>
                     </div>
 
-                    <p className="text-slate-400 text-xs line-clamp-2">{item.description}</p>
+                    <p className="text-[#AAA99F] text-xs line-clamp-2">{item.description}</p>
                   </div>
 
-                  <div className="border-t border-slate-800/80 pt-3 space-y-1.5 text-xs font-mono">
-                    <div className="flex items-center justify-between text-slate-400">
+                  <div className="border-t border-[#282A24] pt-2.5 space-y-1.5 text-xs font-mono">
+                    <div className="flex items-center justify-between text-[#AAA99F]">
                       <span>Generations:</span>
-                      <span className="text-slate-200 font-medium">{item.generation_count} iterations</span>
+                      <span className="text-[#F3F0E8] font-medium">{item.generation_count} iterations</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Licence Check:</span>
+                      <span className="text-[#AAA99F]">Licence Check:</span>
                       <SafetyBadge status={itemSafety.status} cause={itemSafety.causes[0]} />
                     </div>
                   </div>
@@ -231,11 +231,11 @@ export function CreatorProfile({
 
       {/* PORTFOLIO ITEM WORKFLOW MODAL */}
       {selectedItem && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-          <div className="bg-slate-950 border border-slate-800 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 relative space-y-6 shadow-2xl">
+        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div className="bg-[#191A17] border border-[#282A24] rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 relative space-y-6 shadow-2xl">
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-md border border-slate-800 bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              className="absolute top-4 right-4 p-1.5 rounded-md border border-[#282A24] bg-[#20211D] text-[#AAA99F] hover:text-[#F3F0E8] transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -249,8 +249,8 @@ export function CreatorProfile({
                   aspectRatio={selectedItem.aspect_ratio}
                   mediaType={selectedItem.media_type}
                 />
-                <div className="flex items-center justify-between font-mono text-xs text-slate-400 bg-slate-900 p-2.5 rounded-md border border-slate-800">
-                  <span>Aspect Ratio: [{selectedItem.aspect_ratio}]</span>
+                <div className="flex items-center justify-between font-mono text-xs text-[#AAA99F] bg-[#111210] p-2.5 rounded-md border border-[#282A24]">
+                  <span>Aspect: [{selectedItem.aspect_ratio}]</span>
                   <span>Type: {selectedItem.content_type}</span>
                   <span>{selectedItem.generation_count} iterations</span>
                 </div>
@@ -259,16 +259,16 @@ export function CreatorProfile({
               {/* Right Column: Workflow Replay Details */}
               <div className="lg:col-span-6 space-y-5 text-left">
                 <div>
-                  <h2 className="text-2xl font-bold text-white font-display leading-tight">{selectedItem.title}</h2>
-                  <p className="text-slate-400 text-sm mt-1">{selectedItem.description}</p>
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#F3F0E8] font-display leading-tight">{selectedItem.title}</h2>
+                  <p className="text-[#AAA99F] text-xs sm:text-sm mt-1">{selectedItem.description}</p>
                 </div>
 
                 {/* Tools Used */}
-                <div className="space-y-1.5 border-t border-slate-800 pt-3">
-                  <span className="font-mono text-xs text-slate-400 block uppercase tracking-wider font-medium">Software Stack & Active Plans</span>
+                <div className="space-y-1.5 border-t border-[#282A24] pt-3">
+                  <span className="font-mono text-xs text-[#AAA99F] block uppercase tracking-wider font-medium">Software Stack & Active Plans</span>
                   <div className="flex flex-wrap gap-1.5">
                     {selectedItem.tools_used.map((tu, idx) => (
-                      <span key={idx} className="bg-slate-900 border border-slate-800 text-xs font-mono px-2 py-1 rounded text-indigo-300">
+                      <span key={idx} className="bg-[#111210] border border-[#282A24] text-xs font-mono px-2 py-1 rounded text-[#D5AD52]">
                         {tu.tool} ({tu.plan})
                       </span>
                     ))}
@@ -277,13 +277,13 @@ export function CreatorProfile({
 
                 {/* Proof Link */}
                 {selectedItem.proof_url && (
-                  <div className="space-y-1 border-t border-slate-800 pt-3">
-                    <span className="font-mono text-xs text-slate-400 block uppercase tracking-wider font-medium">Workflow Repository</span>
+                  <div className="space-y-1 border-t border-[#282A24] pt-3">
+                    <span className="font-mono text-xs text-[#AAA99F] block uppercase tracking-wider font-medium">Workflow Repository</span>
                     <a
                       href={selectedItem.proof_url}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:underline font-mono"
+                      className="inline-flex items-center gap-1.5 text-xs text-[#D5AD52] hover:underline font-mono"
                     >
                       {selectedItem.proof_url}
                       <ExternalLink className="w-3 h-3" />
@@ -292,32 +292,32 @@ export function CreatorProfile({
                 )}
 
                 {/* Workflow Replay Step Log */}
-                <div className="space-y-3 border-t border-slate-800 pt-3">
+                <div className="space-y-3 border-t border-[#282A24] pt-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-slate-400 uppercase tracking-wider font-medium">
+                    <span className="font-mono text-xs text-[#AAA99F] uppercase tracking-wider font-medium">
                       Workflow Step Log ({selectedItem.workflow_steps.length} steps)
                     </span>
-                    <span className="font-mono text-xs text-slate-500">{selectedItem.generation_count} total runs</span>
+                    <span className="font-mono text-xs text-[#76756D]">{selectedItem.generation_count} total runs</span>
                   </div>
 
-                  <div className="relative border-l border-slate-800 pl-4 space-y-4 py-1">
+                  <div className="relative border-l border-[#282A24] pl-4 space-y-3 py-1">
                     {selectedItem.workflow_steps.map((step, idx) => (
-                      <div key={idx} data-testid="workflow-step" className="relative space-y-1">
+                      <div key={idx} data-testid="workflow-step" className="relative space-y-0.5">
                         {/* Step Marker */}
-                        <div className="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-indigo-500" />
+                        <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-[#D5AD52]" />
 
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-xs font-semibold text-white">
+                          <span className="font-mono text-xs font-semibold text-[#F3F0E8]">
                             0{idx + 1}. {step.title}
                           </span>
                           {step.tool && (
-                            <span className="font-mono text-[10px] bg-slate-900 border border-slate-800 text-slate-400 px-1.5 rounded">
+                            <span className="font-mono text-[10px] bg-[#111210] border border-[#282A24] text-[#AAA99F] px-1.5 rounded">
                               {step.tool}
                             </span>
                           )}
                         </div>
 
-                        <p className="text-xs text-slate-400 leading-relaxed">{step.detail}</p>
+                        <p className="text-xs text-[#AAA99F] leading-relaxed">{step.detail}</p>
                       </div>
                     ))}
                   </div>
@@ -330,44 +330,44 @@ export function CreatorProfile({
 
       {/* INVITE TO BRIEF MODAL */}
       {inviteModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-950 border border-slate-800 rounded-xl w-full max-w-md p-6 space-y-4 relative shadow-2xl">
+        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#191A17] border border-[#282A24] rounded-xl w-full max-w-md p-6 space-y-4 relative shadow-2xl">
             <button
               onClick={() => setInviteModalOpen(false)}
-              className="absolute top-4 right-4 p-1.5 rounded-md border border-slate-800 bg-slate-900 text-slate-400 hover:text-white"
+              className="absolute top-4 right-4 p-1.5 rounded-md border border-[#282A24] bg-[#20211D] text-[#AAA99F] hover:text-[#F3F0E8]"
             >
               <X className="w-4 h-4" />
             </button>
 
-            <h3 className="text-xl font-bold text-white font-display">Invite {creator.name}</h3>
-            <p className="text-slate-400 text-xs">
+            <h3 className="text-xl font-bold text-[#F3F0E8] font-display">Invite {creator.name}</h3>
+            <p className="text-[#AAA99F] text-xs">
               Select one of your active campaign briefs to issue a pitch invitation.
             </p>
 
             {inviteSuccess ? (
-              <div className="bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 p-4 rounded-md text-center font-mono text-xs flex items-center justify-center gap-2">
+              <div className="bg-[#3E895B]/15 border border-[#3E895B]/30 text-[#6BCB8B] p-4 rounded-md text-center font-mono text-xs flex items-center justify-center gap-2">
                 <CheckCircle className="w-4 h-4" />
                 Invitation sent! Redirecting to workspace...
               </div>
             ) : publishedBriefs.length === 0 ? (
               <div className="space-y-3 py-2">
-                <p className="text-xs text-amber-400">You have no published briefs available to invite.</p>
-                <Link href="/briefs/new" className="px-4 py-2 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium block text-center">
+                <p className="text-xs text-[#E5A853]">You have no published briefs available to invite.</p>
+                <Link href="/briefs/new" className="btn-primary text-xs w-full block text-center">
                   Create a new brief
                 </Link>
               </div>
             ) : (
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <label className="font-mono text-xs text-slate-400 block">Select Target Brief</label>
+                  <label className="font-mono text-xs text-[#AAA99F] block">Select Target Brief</label>
                   <select
                     suppressHydrationWarning
                     value={selectedBriefId}
                     onChange={(e) => setSelectedBriefId(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-800 text-slate-200 text-xs rounded-md p-2.5 focus:outline-none focus:border-indigo-500"
+                    className="w-full bg-[#111210] border border-[#282A24] text-[#F3F0E8] text-xs rounded-md p-2.5 focus:outline-none focus:border-[#D5AD52]"
                   >
                     {publishedBriefs.map((b) => (
-                      <option key={b.id} value={b.id} className="bg-slate-900 text-slate-200">
+                      <option key={b.id} value={b.id} className="bg-[#111210] text-[#F3F0E8]">
                         {b.brand_name} — {b.title} [{b.format}]
                       </option>
                     ))}
@@ -377,7 +377,7 @@ export function CreatorProfile({
                 <button
                   onClick={handleInviteSubmit}
                   disabled={isSubmitting}
-                  className="w-full py-2.5 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs transition-colors flex items-center justify-center gap-2"
+                  className="btn-primary w-full text-xs"
                 >
                   {isSubmitting ? "Sending invite..." : "Confirm & Send Invitation"}
                 </button>

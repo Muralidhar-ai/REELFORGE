@@ -11,22 +11,38 @@ module.exports = {
         paper: "var(--paper)",
         surface: "var(--surface)",
         "surface-2": "var(--surface-2)",
+        "surface-elevated": "var(--surface-elevated)",
         ink: {
           DEFAULT: "var(--ink)",
           2: "var(--ink-2)",
           3: "var(--ink-3)",
         },
-        line: "var(--line)",
-        "line-bright": "var(--line-bright)",
+        line: {
+          DEFAULT: "var(--line)",
+          subtle: "var(--line-subtle)",
+          bright: "var(--line-bright)",
+        },
         accent: {
           DEFAULT: "var(--accent)",
+          hover: "var(--accent-hover)",
           2: "var(--accent-2)",
         },
-        cyan: "var(--cyan)",
-        pink: "var(--pink)",
-        ok: "var(--ok)",
-        warn: "var(--warn)",
-        bad: "var(--bad)",
+        ok: {
+          DEFAULT: "var(--ok)",
+          text: "var(--ok-text)",
+        },
+        warn: {
+          DEFAULT: "var(--warn)",
+          text: "var(--warn-text)",
+        },
+        bad: {
+          DEFAULT: "var(--bad)",
+          text: "var(--bad-text)",
+        },
+        info: {
+          DEFAULT: "var(--info)",
+          text: "var(--info-text)",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],

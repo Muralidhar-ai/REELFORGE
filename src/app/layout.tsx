@@ -1,30 +1,10 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { RoleProvider } from "@/context/RoleContext";
-
-const spaceGrotesk = Space_Grotesk({
-  weight: ["500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  weight: ["400", "500", "600"],
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
+import { LanguageProvider } from "@/context/LanguageContext";
+import { FeedbackWidget } from "@/components/common/FeedbackWidget";
 
 export const metadata: Metadata = {
   title: "ReelForge — Production Desk for Hiring AI Creators",
@@ -37,13 +17,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Fonts loaded via link tag — works offline in dev, graceful degradation at build */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-paper text-ink font-sans">
-        <RoleProvider>
-          <Header />
-          <main className="flex-1 max-w-[1200px] w-full mx-auto px-6 py-8">{children}</main>
-          <Footer />
-        </RoleProvider>
+        <LanguageProvider>
+          <RoleProvider>
+            <Header />
+            <main className="flex-1 max-w-[1200px] w-full mx-auto px-6 py-8">{children}</main>
+            <Footer />
+            <FeedbackWidget />
+          </RoleProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

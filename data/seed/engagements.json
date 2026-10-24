@@ -14,6 +14,91 @@
         "state": "changes_requested"
       }
     ],
+    "payment": {
+      "id": "pay_eng_1",
+      "amount": 3500,
+      "currency": "USD",
+      "status": "escrowed",
+      "funded_at": "2026-10-04T10:00:00Z",
+      "method": "Corporate Escrow Card",
+      "brand_name": "Velox Athletics",
+      "creator_name": "Inbarasan",
+      "transaction_ref": "tx_esc_9843217"
+    },
+    "messages": [
+      {
+        "id": "msg_eng1_1",
+        "sender_role": "brand",
+        "sender_name": "Velox Athletics Lead",
+        "message": "Hi Inbarasan, welcome to the campaign! We want high-energy visual fluid dynamics on the beat drop for our launch reel.",
+        "timestamp": "2026-10-04T10:15:00Z"
+      },
+      {
+        "id": "msg_eng1_2",
+        "sender_role": "creator",
+        "sender_name": "Inbarasan",
+        "message": "Hey team! Excited to work on this. Setting up the ComfyUI node pipeline with the 9:16 aspect ratio now.",
+        "timestamp": "2026-10-04T10:30:00Z"
+      },
+      {
+        "id": "msg_eng1_3",
+        "sender_role": "brand",
+        "sender_name": "Velox Athletics Lead",
+        "message": "Can you provide 3 additional 30s variations completely off-platform directly to our private Telegram without logging them in ReelForge?",
+        "timestamp": "2026-10-04T11:45:00Z"
+      }
+    ],
+    "updated_at": "2026-10-05T16:00:00Z"
+  },
+  {
+    "id": "eng_sneaker_001",
+    "brief_id": "brief_1",
+    "creator_id": "cr_1",
+    "status": "in_progress",
+    "revision_rounds_used": 1,
+    "versions": [
+      {
+        "n": 1,
+        "note": "Rendered 9:16 liquid fluid flow sequence using ComfyUI node pipeline and Runway Gen-3.",
+        "media_url": "/seed/sneaker_916.mp4",
+        "brand_feedback": "Please adjust liquid motion contrast on frame 120 beat drop.",
+        "state": "changes_requested"
+      }
+    ],
+    "payment": {
+      "id": "pay_eng_sneaker",
+      "amount": 3500,
+      "currency": "USD",
+      "status": "escrowed",
+      "funded_at": "2026-10-05T10:00:00Z",
+      "method": "Corporate Escrow Card (Visa ending 4281)",
+      "brand_name": "AURA Kicks",
+      "creator_name": "Inbarasan",
+      "transaction_ref": "tx_esc_8932145"
+    },
+    "messages": [
+      {
+        "id": "msg_snk_1",
+        "sender_role": "brand",
+        "sender_name": "AURA Kicks Lead",
+        "message": "Welcome Inbarasan! We are launching our Gen-Z liquid-tech running shoe and need top-tier generative motion quality.",
+        "timestamp": "2026-10-05T10:05:00Z"
+      },
+      {
+        "id": "msg_snk_2",
+        "sender_role": "creator",
+        "sender_name": "Inbarasan",
+        "message": "Glad to collaborate with AURA Kicks! I've loaded the 3D sneaker meshes and ComfyUI workflow. v1 render will be uploaded shortly.",
+        "timestamp": "2026-10-05T10:20:00Z"
+      },
+      {
+        "id": "msg_snk_3",
+        "sender_role": "brand",
+        "sender_name": "AURA Kicks Lead",
+        "message": "Can you provide this entire extra 60s cut off-platform directly to my personal WhatsApp without logging it in ReelForge?",
+        "timestamp": "2026-10-05T11:00:00Z"
+      }
+    ],
     "updated_at": "2026-10-05T16:00:00Z"
   }
 ]

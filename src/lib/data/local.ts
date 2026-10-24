@@ -10,6 +10,8 @@ import {
   Brief,
   Engagement,
   ToolLicense,
+  ShortlistItem,
+  AuditEvent,
   computeVerificationLevel,
 } from "../types";
 import { evaluateCreatorSafety } from "../safety";
@@ -34,6 +36,48 @@ let portfolioStore: PortfolioItem[] = seedPortfolio as unknown as PortfolioItem[
 let briefsStore: Brief[] = seedBriefs as unknown as Brief[];
 let licensesStore: ToolLicense[] = seedToolLicenses as unknown as ToolLicense[];
 let engagementsStore: Engagement[] = seedEngagements as unknown as Engagement[];
+
+let shortlistsStore: ShortlistItem[] = [
+  {
+    id: "shortlist_1",
+    brief_id: "brief_1",
+    creator_id: "cr_1",
+    notes: "Top match for liquid fluid flow animation and Runway Gen-3 pipeline",
+    added_by: "brand",
+    created_at: "2026-10-01T10:00:00Z",
+  },
+  {
+    id: "shortlist_2",
+    brief_id: "brief_1",
+    creator_id: "cr_2",
+    notes: "Alternative 3D motion designer with fantasy/gaming expertise",
+    added_by: "auto_agent",
+    created_at: "2026-10-01T10:05:00Z",
+  },
+];
+
+let auditEventsStore: AuditEvent[] = [
+  {
+    id: "audit_1",
+    timestamp: "2026-10-01T09:30:00Z",
+    actor_role: "brand",
+    actor_id: "brand_aura",
+    action: "create_brief",
+    entity_type: "brief",
+    entity_id: "brief_1",
+    details: { title: "Gen-Z Neon Sneaker Launch Reel", format: "9:16", budget: "$2,500 - $4,000" },
+  },
+  {
+    id: "audit_2",
+    timestamp: "2026-10-01T10:05:00Z",
+    actor_role: "system",
+    actor_id: "auto_shortlist_agent",
+    action: "propose_shortlist",
+    entity_type: "brief",
+    entity_id: "brief_1",
+    details: { candidates_proposed: 2, top_candidate: "cr_1", match_score: 95 },
+  },
+];
 
 function passesFilters(
   c: Creator,
@@ -351,9 +395,40 @@ export class LocalRepo implements Repo {
         id,
         brief_id: briefsStore[0]?.id || "brief_1",
         creator_id: creatorsStore[0]?.id || "cr_1",
-        status: "invited",
-        revision_rounds_used: 0,
-        versions: [],
+        status: "in_progress",
+        revision_rounds_used: 1,
+        versions: [
+          {
+            n: 1,
+            note: "Rendered 9:16 liquid fluid flow sequence using ComfyUI node pipeline and Runway Gen-3.",
+            media_url: "/seed/sneaker_916.mp4",
+            brand_feedback: "Please adjust liquid motion contrast on frame 120 beat drop.",
+            state: "changes_requested",
+          },
+        ],
+        messages: [
+          {
+            id: `msg_${id}_1`,
+            sender_role: "brand",
+            sender_name: "Brand Campaign Lead",
+            message: "Hello! Welcome to the production board for this campaign. Excited to see your fluid generative style.",
+            timestamp: new Date(Date.now() - 3600000 * 2).toISOString(),
+          },
+          {
+            id: `msg_${id}_2`,
+            sender_role: "creator",
+            sender_name: "Inbarasan",
+            message: "Glad to collaborate! I've loaded the ComfyUI workflow graph and initial prompt variations. v1 render ready for review.",
+            timestamp: new Date(Date.now() - 3600000 * 1.5).toISOString(),
+          },
+          {
+            id: `msg_${id}_3`,
+            sender_role: "brand",
+            sender_name: "Brand Campaign Lead",
+            message: "Can you provide this entire extra 60s cut off-platform directly to my personal WhatsApp without logging it in ReelForge?",
+            timestamp: new Date(Date.now() - 3600000).toISOString(),
+          },
+        ],
         updated_at: new Date().toISOString(),
       };
       engagementsStore.unshift(eng);
@@ -398,6 +473,46 @@ export class LocalRepo implements Repo {
 
   async listToolLicenses(): Promise<ToolLicense[]> {
     return licensesStore;
+  }
+
+  async listShortlist(briefId: string): Promise<ShortlistItem[]> {
+    return shortlistsStore.filter((s) => s.brief_id === briefId);
+  }
+
+  async addToShortlist(item: ShortlistItem): Promise<ShortlistItem> {
+    const existingIdx = shortlistsStore.findIndex(
+      (s) => s.brief_id === item.brief_id && s.creator_id === item.creator_id
+    );
+    if (existingIdx >= 0) {
+      shortlistsStore[existingIdx] = item;
+      return item;
+    }
+    shortlistsStore.unshift(item);
+    return item;
+  }
+
+  async removeFromShortlist(briefId: string, creatorId: string): Promise<boolean> {
+    const initialLen = shortlistsStore.length;
+    shortlistsStore = shortlistsStore.filter(
+      (s) => !(s.brief_id === briefId && s.creator_id === creatorId)
+    );
+    return shortlistsStore.length < initialLen;
+  }
+
+  async logAuditEvent(event: AuditEvent): Promise<AuditEvent> {
+    auditEventsStore.unshift(event);
+    return event;
+  }
+
+  async listAuditEvents(params?: { entityId?: string; actorRole?: string }): Promise<AuditEvent[]> {
+    let result = [...auditEventsStore];
+    if (params?.entityId) {
+      result = result.filter((e) => e.entity_id === params.entityId);
+    }
+    if (params?.actorRole) {
+      result = result.filter((e) => e.actor_role === params.actorRole);
+    }
+    return result;
   }
 }
 

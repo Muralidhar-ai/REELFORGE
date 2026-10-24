@@ -20,9 +20,40 @@ export default async function EngagementDetailPage({
       id,
       brief_id: allBriefs[0]?.id || "brief_1",
       creator_id: allCreators[0]?.id || "cr_1",
-      status: "invited",
-      revision_rounds_used: 0,
-      versions: [],
+      status: "in_progress",
+      revision_rounds_used: 1,
+      versions: [
+        {
+          n: 1,
+          note: "Rendered 9:16 liquid fluid flow sequence using ComfyUI node pipeline and Runway Gen-3.",
+          media_url: "/seed/sneaker_916.mp4",
+          brand_feedback: "Please adjust liquid motion contrast on frame 120 beat drop.",
+          state: "changes_requested",
+        },
+      ],
+      messages: [
+        {
+          id: `msg_${id}_1`,
+          sender_role: "brand",
+          sender_name: "AURA Kicks Lead",
+          message: "Welcome Inbarasan! We are launching our Gen-Z liquid-tech running shoe and need top-tier generative motion quality.",
+          timestamp: new Date(Date.now() - 3600000 * 2).toISOString(),
+        },
+        {
+          id: `msg_${id}_2`,
+          sender_role: "creator",
+          sender_name: "Inbarasan",
+          message: "Glad to collaborate with AURA Kicks! I've loaded the 3D sneaker meshes and ComfyUI workflow. v1 render ready for review.",
+          timestamp: new Date(Date.now() - 3600000 * 1.5).toISOString(),
+        },
+        {
+          id: `msg_${id}_3`,
+          sender_role: "brand",
+          sender_name: "AURA Kicks Lead",
+          message: "Can you provide this entire extra 60s cut off-platform directly to my personal WhatsApp without logging it in ReelForge?",
+          timestamp: new Date(Date.now() - 3600000).toISOString(),
+        },
+      ],
       updated_at: new Date().toISOString(),
     };
   }

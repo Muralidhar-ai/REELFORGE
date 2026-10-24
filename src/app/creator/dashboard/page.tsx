@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRole } from "@/context/RoleContext";
+import { useLanguage } from "@/context/LanguageContext";
 import { Creator, PortfolioItem, Engagement, Brief, WorkflowStep, ToolUsed } from "@/lib/types";
 import {
   CONTENT_TYPES,
@@ -22,6 +23,7 @@ import { Plus, Trash2, CheckCircle, XCircle, Send } from "lucide-react";
 
 export default function CreatorDashboardPage() {
   const { role, activeCreatorId } = useRole();
+  const { t } = useLanguage();
 
   const [creator, setCreator] = useState<Creator | null>(null);
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
@@ -216,14 +218,14 @@ export default function CreatorDashboardPage() {
           <div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs bg-accent text-paper px-2 py-0.5 rounded font-bold uppercase">
-                Creator Studio
+                {t("creatorDash.title")}
               </span>
               <span className="text-ink-2">•</span>
               <span className="font-mono text-xs text-ink-2">Active Artist: {creator.name}</span>
             </div>
-            <h1 className="font-display text-4xl text-ink mt-1">{creator.name} — Production Studio</h1>
+            <h1 className="font-display text-4xl text-ink mt-1">{creator.name} — {t("creatorDash.title")}</h1>
             <p className="text-ink-2 text-xs mt-1">
-              Manage incoming commercial campaign invites, record workflow step replays, and edit public profile details.
+              {t("creatorDash.subtitle")}
             </p>
           </div>
 
@@ -238,7 +240,7 @@ export default function CreatorDashboardPage() {
       {/* SECTION 1: INCOMING INVITES & ENGAGEMENTS */}
       <div className="space-y-4">
         <h2 className="font-display text-2xl text-ink border-b border-line pb-2">
-          Incoming Brief Invites ({invites.length})
+          {t("creatorDash.activeInvites")} ({invites.length})
         </h2>
 
         {invites.length === 0 ? (

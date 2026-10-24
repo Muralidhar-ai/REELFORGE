@@ -154,56 +154,56 @@ export function CreatorDirectory({
   if (filters.safeForPaidAds) activeChips.push({ key: "safeForPaidAds", value: "true", label: "Safe for paid ads" });
 
   const renderFilterSidebar = () => (
-    <div className="space-y-6 text-xs text-slate-300">
+    <div className="space-y-6 text-xs text-[#94A3B8]">
       {/* Search Input */}
-      <div className="space-y-1.5" data-testid="filter-group">
-        <label className="font-mono text-amber-300 uppercase tracking-wider text-[10px] block font-semibold">Search Roster</label>
+      <div className="space-y-2" data-testid="filter-group">
+        <label className="font-mono text-[#E5A83B] uppercase tracking-wider text-[11px] block font-bold">Search Roster</label>
         <div className="relative">
           <input
             type="text"
             value={filters.search || ""}
             onChange={(e) => handleSearchChange(e.target.value)}
-            placeholder="Search directors, tools, skills..."
-            className="w-full bg-[#0C0D12] border border-amber-500/20 rounded-lg px-3 py-2 pl-8 text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-[#E2B857]"
+            placeholder="Search directors, tools, engines..."
+            className="w-full bg-[#0B0D11] border border-[#1E2536] rounded-xl px-3 py-2 pl-9 text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#E5A83B] focus:ring-1 focus:ring-[#E5A83B]/50 transition-all font-sans"
           />
-          <Search className="w-3.5 h-3.5 text-amber-400 absolute left-2.5 top-3" />
+          <Search className="w-4 h-4 text-[#94A3B8] absolute left-3 top-2.5" />
         </div>
       </div>
 
       {/* Toggles */}
-      <div className="space-y-2 pt-3 border-t border-amber-500/15" data-testid="filter-group">
-        <label className="flex items-center justify-between cursor-pointer text-slate-300 hover:text-white">
-          <span>Verified directors only</span>
+      <div className="space-y-2.5 pt-4 border-t border-[#1E2536]" data-testid="filter-group">
+        <label className="flex items-center justify-between cursor-pointer text-[#94A3B8] hover:text-[#F8FAFC] transition-colors p-1">
+          <span className="font-medium">Verified directors only</span>
           <input
             type="checkbox"
             checked={Boolean(filters.verifiedOnly)}
             onChange={() => toggleBooleanFilter("verifiedOnly")}
-            className="accent-[#E2B857] rounded"
+            className="accent-[#E5A83B] rounded w-4 h-4 cursor-pointer"
           />
         </label>
-        <label className="flex items-center justify-between cursor-pointer text-slate-300 hover:text-white">
-          <span>Safe for paid ads</span>
+        <label className="flex items-center justify-between cursor-pointer text-[#94A3B8] hover:text-[#F8FAFC] transition-colors p-1">
+          <span className="font-medium">Safe for paid ads</span>
           <input
             type="checkbox"
             checked={Boolean(filters.safeForPaidAds)}
             onChange={() => toggleBooleanFilter("safeForPaidAds")}
-            className="accent-[#E2B857] rounded"
+            className="accent-[#E5A83B] rounded w-4 h-4 cursor-pointer"
           />
         </label>
       </div>
 
       {/* Specialization */}
-      <div className="space-y-1.5 pt-3 border-t border-amber-500/15" data-testid="filter-group">
-        <span className="font-mono text-amber-300 text-[10px] uppercase tracking-wider block font-semibold">Specialization</span>
-        <div className="space-y-1 max-h-36 overflow-y-auto pr-1">
+      <div className="space-y-2 pt-4 border-t border-[#1E2536]" data-testid="filter-group">
+        <span className="font-mono text-[#E5A83B] text-[11px] uppercase tracking-wider block font-bold">Specialization</span>
+        <div className="space-y-1 max-h-40 overflow-y-auto pr-1">
           {SPECIALIZATIONS.map((spec) => {
             const count = result.facets.specializations[spec] || 0;
             const checked = filters.specialization?.includes(spec);
             return (
               <label
                 key={spec}
-                className={`flex items-center justify-between px-2 py-1 rounded cursor-pointer transition-colors ${
-                  checked ? "bg-amber-500/15 text-amber-300 font-medium border border-amber-500/30" : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
+                className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg cursor-pointer transition-colors ${
+                  checked ? "bg-[#1A1E29] text-[#F8FAFC] font-semibold border border-[#E5A83B]/40 shadow-sm" : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#12151D]"
                 }`}
               >
                 <div className="flex items-center gap-2">
@@ -211,11 +211,11 @@ export function CreatorDirectory({
                     type="checkbox"
                     checked={Boolean(checked)}
                     onChange={() => toggleArrayFilter("specialization", spec)}
-                    className="accent-[#E2B857] rounded"
+                    className="accent-[#E5A83B] rounded cursor-pointer"
                   />
                   <span>{spec}</span>
                 </div>
-                <span className="font-mono text-[10px] text-slate-500">{count}</span>
+                <span className="font-mono text-[10px] text-[#64748B] font-bold">{count}</span>
               </label>
             );
           })}
@@ -223,17 +223,17 @@ export function CreatorDirectory({
       </div>
 
       {/* Tools */}
-      <div className="space-y-1.5 pt-3 border-t border-amber-500/15" data-testid="filter-group">
-        <span className="font-mono text-amber-300 text-[10px] uppercase tracking-wider block font-semibold">Generative Tools</span>
-        <div className="space-y-1 max-h-40 overflow-y-auto pr-1">
+      <div className="space-y-2 pt-4 border-t border-[#1E2536]" data-testid="filter-group">
+        <span className="font-mono text-[#E5A83B] text-[11px] uppercase tracking-wider block font-bold">Generative Tools</span>
+        <div className="space-y-1 max-h-44 overflow-y-auto pr-1">
           {TOOLS.map((t) => {
             const count = result.facets.tools[t] || 0;
             const checked = filters.tools?.includes(t);
             return (
               <label
                 key={t}
-                className={`flex items-center justify-between px-2 py-1 rounded cursor-pointer transition-colors ${
-                  checked ? "bg-amber-500/15 text-amber-300 font-medium border border-amber-500/30" : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
+                className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg cursor-pointer transition-colors ${
+                  checked ? "bg-[#1A1E29] text-[#F8FAFC] font-semibold border border-[#E5A83B]/40 shadow-sm" : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#12151D]"
                 }`}
               >
                 <div className="flex items-center gap-2">
@@ -241,11 +241,11 @@ export function CreatorDirectory({
                     type="checkbox"
                     checked={Boolean(checked)}
                     onChange={() => toggleArrayFilter("tools", t)}
-                    className="accent-[#E2B857] rounded"
+                    className="accent-[#E5A83B] rounded cursor-pointer"
                   />
                   <span>{t}</span>
                 </div>
-                <span className="font-mono text-[10px] text-slate-500">{count}</span>
+                <span className="font-mono text-[10px] text-[#64748B] font-bold">{count}</span>
               </label>
             );
           })}
@@ -253,9 +253,9 @@ export function CreatorDirectory({
       </div>
 
       {/* Content Type */}
-      <div className="space-y-1.5 pt-3 border-t border-amber-500/15" data-testid="filter-group">
-        <span className="font-mono text-amber-300 text-[10px] uppercase tracking-wider block font-semibold">Deliverable Type</span>
-        <div className="space-y-1">
+      <div className="space-y-1.5 pt-3 border-t border-[#282A24]" data-testid="filter-group">
+        <span className="font-mono text-[#AAA99F] text-[10px] uppercase tracking-wider block font-medium">Deliverable Type</span>
+        <div className="space-y-0.5">
           {CONTENT_TYPES.map((ct) => {
             const count = result.facets.content_types[ct] || 0;
             const checked = filters.content_types?.includes(ct);
@@ -263,7 +263,7 @@ export function CreatorDirectory({
               <label
                 key={ct}
                 className={`flex items-center justify-between px-2 py-1 rounded cursor-pointer transition-colors ${
-                  checked ? "bg-amber-500/15 text-amber-300 font-medium border border-amber-500/30" : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
+                  checked ? "bg-[#20211D] text-[#F3F0E8] font-medium border border-[#282A24]" : "text-[#AAA99F] hover:text-[#F3F0E8] hover:bg-[#191A17]"
                 }`}
               >
                 <div className="flex items-center gap-2">
@@ -271,11 +271,11 @@ export function CreatorDirectory({
                     type="checkbox"
                     checked={Boolean(checked)}
                     onChange={() => toggleArrayFilter("content_types", ct)}
-                    className="accent-[#E2B857] rounded"
+                    className="accent-[#D5AD52] rounded"
                   />
                   <span>{ct}</span>
                 </div>
-                <span className="font-mono text-[10px] text-slate-500">{count}</span>
+                <span className="font-mono text-[10px] text-[#76756D]">{count}</span>
               </label>
             );
           })}
@@ -283,8 +283,8 @@ export function CreatorDirectory({
       </div>
 
       {/* Formats */}
-      <div className="space-y-1.5 pt-3 border-t border-amber-500/15" data-testid="filter-group">
-        <span className="font-mono text-amber-300 text-[10px] uppercase tracking-wider block font-semibold">Aspect Ratio</span>
+      <div className="space-y-1.5 pt-3 border-t border-[#282A24]" data-testid="filter-group">
+        <span className="font-mono text-[#AAA99F] text-[10px] uppercase tracking-wider block font-medium">Aspect Ratio</span>
         <div className="flex flex-wrap gap-1.5">
           {FORMATS.map((f) => {
             const checked = filters.formats?.includes(f);
@@ -294,8 +294,8 @@ export function CreatorDirectory({
                 onClick={() => toggleArrayFilter("formats", f)}
                 className={`px-2 py-0.5 rounded border text-xs font-mono transition-colors ${
                   checked
-                    ? "border-amber-500/50 text-amber-300 bg-amber-500/15 font-semibold"
-                    : "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                    ? "border-[#D5AD52] text-[#F3F0E8] bg-[#20211D] font-medium"
+                    : "border-[#282A24] text-[#AAA99F] hover:border-[#3D4036] hover:text-[#F3F0E8]"
                 }`}
               >
                 {f}
@@ -306,8 +306,8 @@ export function CreatorDirectory({
       </div>
 
       {/* Style Tags */}
-      <div className="space-y-1.5 pt-3 border-t border-amber-500/15" data-testid="filter-group">
-        <span className="font-mono text-amber-300 text-[10px] uppercase tracking-wider block font-semibold">Visual Aesthetics</span>
+      <div className="space-y-1.5 pt-3 border-t border-[#282A24]" data-testid="filter-group">
+        <span className="font-mono text-[#AAA99F] text-[10px] uppercase tracking-wider block font-medium">Visual Aesthetics</span>
         <div className="flex flex-wrap gap-1 max-h-36 overflow-y-auto">
           {STYLE_TAGS.map((st) => {
             const checked = filters.style_tags?.includes(st);
@@ -317,8 +317,8 @@ export function CreatorDirectory({
                 onClick={() => toggleArrayFilter("style_tags", st)}
                 className={`px-2 py-0.5 rounded border text-[11px] transition-colors ${
                   checked
-                    ? "border-amber-500/50 text-amber-300 bg-amber-500/15 font-semibold"
-                    : "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                    ? "border-[#D5AD52] text-[#F3F0E8] bg-[#20211D] font-medium"
+                    : "border-[#282A24] text-[#AAA99F] hover:border-[#3D4036] hover:text-[#F3F0E8]"
                 }`}
               >
                 {st}
@@ -331,36 +331,42 @@ export function CreatorDirectory({
   );
 
   return (
-    <div className="space-y-8 py-4">
-      {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-amber-500/15 pb-5">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white font-display">Creator Roster</h1>
-          <p className="text-slate-400 text-sm mt-1">
-            Browse verified AI filmmakers, 3D animators, and prompt directors with audited workflow proof.
+    <div className="space-y-8 py-6">
+      {/* Cyber Header & Controls */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#1E2536] pb-6">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#12151D] border border-[#1E2536] text-[#E5A83B] text-xs font-mono font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
+            <span>DIRECTOR ROSTER & COMMERCIAL AI TALENT</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F8FAFC] font-display">
+            AI Filmmakers & Creative Directors
+          </h1>
+          <p className="text-[#94A3B8] text-sm max-w-2xl">
+            Filter certified generative filmmakers by tool stack, node reproducibility, aspect ratio clearance, and global advertising rights.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <button
             onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
-            className="sm:hidden px-3.5 py-1.5 rounded-lg bg-[#151620] border border-amber-500/25 text-amber-300 gap-2 text-xs flex items-center"
+            className="sm:hidden px-3.5 py-2 rounded-lg bg-[#12151D] border border-[#1E2536] text-[#F8FAFC] gap-2 text-xs font-mono flex items-center shadow-sm"
           >
-            <SlidersHorizontal className="w-3.5 h-3.5" />
+            <SlidersHorizontal className="w-3.5 h-3.5 text-[#E5A83B]" />
             Filters
           </button>
 
-          <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
-            <span>Sort:</span>
+          <div className="flex items-center gap-2.5 text-xs text-[#94A3B8] font-mono bg-[#12151D] border border-[#1E2536] rounded-lg px-3 py-1.5 shadow-sm">
+            <span className="text-[#64748B] uppercase font-bold text-[10px]">Sort:</span>
             <select
               suppressHydrationWarning
               value={filters.sort || "relevance"}
               onChange={(e) => handleSortChange(e.target.value as any)}
-              className="bg-[#151620] border border-amber-500/20 text-slate-200 text-xs rounded-lg px-2.5 py-1 focus:outline-none focus:border-[#E2B857]"
+              className="bg-transparent text-[#F8FAFC] text-xs font-semibold focus:outline-none cursor-pointer border-none p-0"
             >
-              <option value="relevance">Relevance</option>
-              <option value="most_verified">Highest Verification</option>
-              <option value="most_portfolio">Most Work Samples</option>
+              <option value="relevance" className="bg-[#12151D] text-[#F8FAFC]">Relevance & Match</option>
+              <option value="most_verified" className="bg-[#12151D] text-[#F8FAFC]">Highest Verification</option>
+              <option value="most_portfolio" className="bg-[#12151D] text-[#F8FAFC]">Most Work Samples</option>
             </select>
           </div>
         </div>
@@ -368,14 +374,14 @@ export function CreatorDirectory({
 
       {/* Active Filter Chips */}
       {activeChips.length > 0 && (
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="font-mono text-xs text-slate-500">Active filters:</span>
+        <div className="flex flex-wrap items-center gap-2 pt-1">
+          <span className="font-mono text-xs text-[#64748B] font-bold uppercase tracking-wider">Filtered by:</span>
           {activeChips.map((chip, idx) => (
             <span
               key={idx}
-              className="inline-flex items-center gap-1.5 text-xs border border-amber-500/30 text-amber-300 bg-amber-500/10 px-2.5 py-0.5 rounded-md"
+              className="inline-flex items-center gap-2 text-xs border border-[#E5A83B]/30 text-[#F8FAFC] bg-[#12151D] px-3 py-1 rounded-lg font-mono shadow-sm"
             >
-              <span>{chip.label}</span>
+              <span className="text-[#E5A83B] font-medium">{chip.label}</span>
               <button
                 onClick={() => {
                   if (chip.key === "search") handleSearchChange("");
@@ -383,17 +389,17 @@ export function CreatorDirectory({
                     toggleBooleanFilter(chip.key);
                   else toggleArrayFilter(chip.key, chip.value);
                 }}
-                className="hover:text-white"
+                className="text-[#94A3B8] hover:text-[#F8FAFC] transition-colors"
               >
-                <X className="w-3 h-3" />
+                <X className="w-3.5 h-3.5" />
               </button>
             </span>
           ))}
           <button
             onClick={clearAllFilters}
-            className="font-mono text-xs text-slate-400 hover:text-white underline ml-2"
+            className="font-mono text-xs text-[#E5A83B] hover:text-[#FCD34D] transition-colors font-semibold ml-2 underline underline-offset-4"
           >
-            Clear all
+            Clear all ({activeChips.length})
           </button>
         </div>
       )}
@@ -401,18 +407,18 @@ export function CreatorDirectory({
       {/* Directory Layout: Sidebar + Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 items-start">
         {/* Left Sidebar Desktop */}
-        <aside className="hidden sm:block sm:col-span-4 lg:col-span-3 border-r border-amber-500/15 pr-6 sticky top-20">
+        <aside className="hidden sm:block sm:col-span-4 lg:col-span-3 border-r border-[#282A24] pr-6 sticky top-20">
           {renderFilterSidebar()}
         </aside>
 
         {/* Mobile Filter Drawer */}
         {mobileDrawerOpen && (
           <div className="sm:hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex justify-end">
-            <div className="w-4/5 max-w-sm bg-[#0C0D12] h-full p-6 overflow-y-auto space-y-4 border-l border-amber-500/20">
-              <div className="flex items-center justify-between border-b border-amber-500/15 pb-3">
-                <span className="font-semibold text-lg text-white">Filter Roster</span>
+            <div className="w-4/5 max-w-sm bg-[#111210] h-full p-6 overflow-y-auto space-y-4 border-l border-[#282A24]">
+              <div className="flex items-center justify-between border-b border-[#282A24] pb-3">
+                <span className="font-semibold text-base text-[#F3F0E8]">Filter Roster</span>
                 <button onClick={() => setMobileDrawerOpen(false)}>
-                  <X className="w-5 h-5 text-slate-400" />
+                  <X className="w-5 h-5 text-[#AAA99F]" />
                 </button>
               </div>
               {renderFilterSidebar()}
@@ -423,27 +429,27 @@ export function CreatorDirectory({
         {/* Right Main Grid */}
         <main className="sm:col-span-8 lg:col-span-9 space-y-6">
           {isPending && (
-            <div className="font-mono text-xs text-amber-300 py-2">Updating roster results...</div>
+            <div className="font-mono text-xs text-[#AAA99F] py-1">Updating roster...</div>
           )}
 
           {/* EMPTY STATE */}
           {result.creators.length === 0 ? (
-            <div data-testid="empty-state-suggestion" className="border border-amber-500/20 bg-[#151620] rounded-2xl p-8 text-center space-y-4">
-              <h3 className="text-xl font-bold text-white font-display">No directors match all active filters</h3>
-              <p className="text-slate-400 text-sm max-w-md mx-auto">
+            <div data-testid="empty-state-suggestion" className="border border-[#282A24] bg-[#191A17] rounded-xl p-8 text-center space-y-4">
+              <h3 className="text-lg font-bold text-[#F3F0E8] font-display">No directors match all active filters</h3>
+              <p className="text-[#AAA99F] text-xs max-w-md mx-auto">
                 Try removing one or more active filters to widen your director discovery search.
               </p>
 
               {result.emptyStateSuggestions && result.emptyStateSuggestions.length > 0 && (
-                <div className="space-y-3 pt-2">
-                  <span className="font-mono text-xs text-amber-300/80 block uppercase tracking-wider">Suggested Adjustments:</span>
+                <div className="space-y-2.5 pt-2">
+                  <span className="font-mono text-xs text-[#AAA99F] block uppercase tracking-wider">Suggested Adjustments:</span>
                   <div className="flex flex-wrap justify-center gap-2">
                     {result.emptyStateSuggestions.slice(0, 3).map((suggestion, idx) => (
                       <button
                         key={idx}
                         data-testid="empty-state-suggestion"
                         onClick={() => removeSpecificFilter(suggestion)}
-                        className="px-3 py-1.5 rounded-lg bg-[#0C0D12] hover:bg-amber-500/10 text-amber-300 text-xs border border-amber-500/25"
+                        className="px-3 py-1.5 rounded bg-[#111210] hover:bg-[#20211D] text-[#F3F0E8] text-xs border border-[#282A24] transition-colors"
                       >
                         Remove {suggestion.label} ({suggestion.count} matches)
                       </button>
@@ -453,7 +459,7 @@ export function CreatorDirectory({
               )}
 
               <div className="pt-2">
-                <button onClick={clearAllFilters} className="btn-primary text-xs">
+                <button onClick={clearAllFilters} className="btn-secondary text-xs">
                   Reset All Filters
                 </button>
               </div>
@@ -468,13 +474,13 @@ export function CreatorDirectory({
                   <div
                     key={creator.id}
                     data-testid="creator-card"
-                    className="border border-slate-800 bg-[#151620] rounded-2xl p-6 space-y-4 hover:border-amber-500/40 hover:bg-[#1A1B2A] transition-all duration-200 flex flex-col justify-between"
+                    className="border border-[#1E2536] bg-[#12151D] rounded-2xl p-6 space-y-5 hover:border-[#E5A83B]/50 transition-all duration-200 flex flex-col justify-between shadow-xl hover:shadow-[#E5A83B]/5 group"
                   >
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       {/* Card Header */}
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex items-center gap-3.5">
-                          <div className="w-12 h-12 rounded-xl border border-amber-500/30 overflow-hidden bg-slate-800 flex-shrink-0 ring-2 ring-amber-500/20">
+                          <div className="w-12 h-12 rounded-xl border border-[#1E2536] overflow-hidden bg-[#1A1E29] flex-shrink-0 shadow-md group-hover:border-[#E5A83B]/40 transition-colors">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={creator.avatar_url}
@@ -488,50 +494,51 @@ export function CreatorDirectory({
                           <div>
                             <Link
                               href={`/creators/${creator.id}`}
-                              className="font-semibold text-white hover:text-[#E2B857] transition-colors text-base block leading-snug"
+                              className="font-bold text-[#F8FAFC] hover:text-[#E5A83B] transition-colors text-base block leading-snug"
                             >
                               {creator.name}
                             </Link>
-                            <p className="text-slate-400 text-xs line-clamp-1">{creator.headline}</p>
+                            <p className="text-[#94A3B8] text-xs line-clamp-1 mt-0.5">{creator.headline}</p>
                           </div>
                         </div>
                       </div>
 
                       {/* Badges */}
-                      <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                      <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
                         <VerificationBadge level={creator.verification_level || "self_declared"} />
                         <SafetyBadge status={safety.status} cause={safety.cause} />
                       </div>
 
                       {/* Specializations & Tools */}
-                      <div className="flex flex-wrap items-center gap-1.5 text-meta pt-1">
+                      <div className="flex flex-wrap items-center gap-1.5 text-meta pt-0.5">
                         {creator.tools.slice(0, 4).map((tool) => (
                           <span
                             key={tool}
-                            className="bg-amber-500/10 border border-amber-500/20 text-amber-300 px-2 py-0.5 rounded text-[10px] font-mono"
+                            className="bg-[#0B0D11] border border-[#E5A83B]/25 text-[#E5A83B] px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold"
                           >
                             {tool}
                           </span>
                         ))}
                         {creator.tools.length > 4 && (
-                          <span className="text-slate-400 text-[10px] font-mono">+{creator.tools.length - 4}</span>
+                          <span className="text-[#64748B] text-[10px] font-mono font-bold">+{creator.tools.length - 4}</span>
                         )}
                       </div>
                     </div>
 
                     {/* 3-frame thumbnail strip at true aspect ratios */}
-                    <div className="grid grid-cols-3 gap-2 pt-3 border-t border-slate-800/80 mt-3">
+                    <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#1E2536] mt-2">
                       {cItems.slice(0, 3).map((item) => (
-                        <PortfolioFrame
-                          key={item.id}
-                          mediaUrl={item.media_url}
-                          altText={item.alt_text}
-                          aspectRatio={item.aspect_ratio}
-                          mediaType={item.media_type}
-                        />
+                        <div key={item.id} className="rounded-lg overflow-hidden border border-[#1E2536] group-hover:border-[#E5A83B]/30 transition-colors shadow-inner">
+                          <PortfolioFrame
+                            mediaUrl={item.media_url}
+                            altText={item.alt_text}
+                            aspectRatio={item.aspect_ratio}
+                            mediaType={item.media_type}
+                          />
+                        </div>
                       ))}
                       {cItems.length === 0 && (
-                        <div className="col-span-3 text-center py-4 font-mono text-xs text-slate-500 bg-[#0C0D12] rounded-lg border border-slate-800">
+                        <div className="col-span-3 text-center py-4 font-mono text-xs text-[#64748B] bg-[#0B0D11] rounded-lg border border-[#1E2536]">
                           No portfolio work uploaded yet
                         </div>
                       )}

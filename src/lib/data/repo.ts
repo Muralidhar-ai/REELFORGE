@@ -4,6 +4,8 @@ import {
   Brief,
   Engagement,
   ToolLicense,
+  ShortlistItem,
+  AuditEvent,
 } from "../types";
 
 export interface CreatorFilterParams {
@@ -55,4 +57,9 @@ export interface Repo {
   createEngagement(engagement: Engagement): Promise<Engagement>;
   updateEngagement(id: string, updates: Partial<Engagement>): Promise<Engagement>;
   listToolLicenses(): Promise<ToolLicense[]>;
+  listShortlist(briefId: string): Promise<ShortlistItem[]>;
+  addToShortlist(item: ShortlistItem): Promise<ShortlistItem>;
+  removeFromShortlist(briefId: string, creatorId: string): Promise<boolean>;
+  logAuditEvent(event: AuditEvent): Promise<AuditEvent>;
+  listAuditEvents(params?: { entityId?: string; actorRole?: string }): Promise<AuditEvent[]>;
 }

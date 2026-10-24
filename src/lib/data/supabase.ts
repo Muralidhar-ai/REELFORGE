@@ -10,6 +10,8 @@ import {
   Brief,
   Engagement,
   ToolLicense,
+  ShortlistItem,
+  AuditEvent,
 } from "../types";
 import { localRepo } from "./local";
 
@@ -172,6 +174,26 @@ export class SupabaseRepo implements Repo {
     } catch {
       return this.fallback.listToolLicenses();
     }
+  }
+
+  async listShortlist(briefId: string): Promise<ShortlistItem[]> {
+    return this.fallback.listShortlist(briefId);
+  }
+
+  async addToShortlist(item: ShortlistItem): Promise<ShortlistItem> {
+    return this.fallback.addToShortlist(item);
+  }
+
+  async removeFromShortlist(briefId: string, creatorId: string): Promise<boolean> {
+    return this.fallback.removeFromShortlist(briefId, creatorId);
+  }
+
+  async logAuditEvent(event: AuditEvent): Promise<AuditEvent> {
+    return this.fallback.logAuditEvent(event);
+  }
+
+  async listAuditEvents(params?: { entityId?: string; actorRole?: string }): Promise<AuditEvent[]> {
+    return this.fallback.listAuditEvents(params);
   }
 }
 

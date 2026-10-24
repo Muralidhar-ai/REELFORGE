@@ -4,7 +4,7 @@ test.describe("ReelForge End-to-End Smoke Test", () => {
   test("Complete brand brief creation, creator discovery, portfolio replay, and review flow", async ({ page }) => {
     // 1. Home page renders hero & creators
     await page.goto("/");
-    await expect(page.locator("h1")).toContainText("Hire AI creators who can show how the work was made.");
+    await expect(page.locator("h1")).toContainText("Hire AI directors with");
     await expect(page.getByTestId("creator-card")).toHaveCount(4);
 
     // 2. Define Brief flow
@@ -29,32 +29,32 @@ test.describe("ReelForge End-to-End Smoke Test", () => {
     // 3. Invite Creator & Verify Role Scope
     await page.click("button:has-text('Invite creator')");
     await page.waitForURL(/\/engagements\//);
-    await expect(page.locator("text=Awaiting Creator Acceptance")).toBeVisible();
+    await expect(page.locator("text=01. Invited")).toBeVisible();
 
-    // 4. Switch to Creator Delivery Desk Tab & Accept Invite
-    await page.click("text=Creator Delivery Desk");
-    await expect(page.locator("text=You have been invited to this campaign brief")).toBeVisible();
-    await page.click("button:has-text('Accept invitation as Creator')");
+    // 4. Switch to Creator Studio Desk Tab & Accept Invite
+    await page.click("text=Creator Studio Desk");
+    await expect(page.locator("text=Campaign Brief Invitation Received")).toBeVisible();
+    await page.click("button:has-text('Accept Brief as')");
 
     // 5. Submit Version v1 as Creator
-    await expect(page.locator("h3:has-text('Submit Version v1')")).toBeVisible();
+    await expect(page.locator("h3:has-text('Submit Render Version v1')")).toBeVisible();
     await page.fill("textarea", "Rendered 9:16 liquid neon sequence using ComfyUI node pipeline");
-    await page.click("button:has-text('Submit version v1')");
+    await page.click("button:has-text('Submit Version v1')");
 
     // 6. Switch to Brand Review Desk Tab & Request Changes
     await page.click("text=Brand Review Desk");
     await page.fill("textarea", "Please make neon contrast brighter on beat drop");
-    await page.click("button:has-text('Request changes with feedback')");
+    await page.click("button:has-text('Request Revision with Feedback')");
 
-    // 7. Switch back to Creator Delivery Desk & Submit Version v2
-    await page.click("text=Creator Delivery Desk");
+    // 7. Switch back to Creator Studio Desk & Submit Version v2
+    await page.click("text=Creator Studio Desk");
     await page.fill("textarea", "Boosted neon contrast on frame 120");
-    await page.click("button:has-text('Submit version v2')");
+    await page.click("button:has-text('Submit Version v2')");
 
     // 8. Switch back to Brand Review Desk & Approve Version v2
     await page.click("text=Brand Review Desk");
-    await page.click("button:has-text('Approve version v2')");
-    await expect(page.getByText("APPROVED", { exact: true })).toBeVisible();
+    await page.click("button:has-text('Approve Version v2')");
+    await expect(page.getByText("MASTER COMMERCIAL DELIVERY VAULT CLEARED")).toBeVisible();
 
     // 9. Creator Directory & Filtering
     await page.goto("/creators");
@@ -70,9 +70,9 @@ test.describe("ReelForge End-to-End Smoke Test", () => {
 
     // 11. Data Model & Review pages
     await page.goto("/data-model");
-    await expect(page.locator("h1")).toContainText("Data Model & Architecture Documentation");
+    await expect(page.locator("h1")).toContainText("Data Model & Clearance Schema");
 
     await page.goto("/review");
-    await expect(page.locator("h1")).toContainText("How this build maps to the brief");
+    await expect(page.locator("h1")).toContainText("Platform Implementation Audit");
   });
 });

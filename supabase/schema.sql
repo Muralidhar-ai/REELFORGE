@@ -75,6 +75,27 @@ CREATE TABLE IF NOT EXISTS engagements (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+CREATE TABLE IF NOT EXISTS shortlists (
+  id TEXT PRIMARY KEY,
+  brief_id TEXT NOT NULL REFERENCES briefs(id) ON DELETE CASCADE,
+  creator_id TEXT NOT NULL REFERENCES creators(id) ON DELETE CASCADE,
+  notes TEXT,
+  added_by TEXT NOT NULL DEFAULT 'brand',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(brief_id, creator_id)
+);
+
+CREATE TABLE IF NOT EXISTS audit_events (
+  id TEXT PRIMARY KEY,
+  timestamp TIMESTAMPTZ DEFAULT NOW(),
+  actor_role TEXT NOT NULL,
+  actor_id TEXT NOT NULL,
+  action TEXT NOT NULL,
+  entity_type TEXT NOT NULL,
+  entity_id TEXT NOT NULL,
+  details JSONB DEFAULT '{}'
+);
+
 CREATE TABLE IF NOT EXISTS tool_licenses (
   tool TEXT NOT NULL,
   plan TEXT NOT NULL,
