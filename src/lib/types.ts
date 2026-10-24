@@ -123,6 +123,14 @@ export interface VersionSubmission {
   reviewed_by?: string;
 }
 
+export interface EngagementMessage {
+  id: string;
+  sender_role: "brand" | "creator" | "platform";
+  sender_name: string;
+  message: string;
+  timestamp: string;
+}
+
 export interface AgreedLicensingTerms {
   usage_rights: UsageRight[];
   territory: string;
@@ -161,6 +169,7 @@ export interface Engagement {
   agreed_terms?: AgreedLicensingTerms;
   revision_rounds_used: number;
   versions: VersionSubmission[];
+  messages?: EngagementMessage[];
   payment?: PaymentRecord;
 
   updated_at: string;
